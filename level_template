@@ -1,0 +1,3 @@
+{% set distance = states('sensor.ultrasonic_sensor') | float * 100 | float - 25 %}
+{% set total = ((170 - distance) * 100) / 170 %}
+{{ [total | round(1), 100] | min }}
